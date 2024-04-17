@@ -39,7 +39,9 @@ public class RolEntity {
     @Enumerated(EnumType.STRING)
     private RolEnum rolEnum;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "rol_permiso", joinColumns = @JoinColumn(name = "id_rol"), inverseJoinColumns = @JoinColumn(name = "id_permiso"))
     private Set<PermisoEntity> permisos = new HashSet<>();
+
+
 }

@@ -1,30 +1,40 @@
 package com.app.SpringSecurity.controllers;
 
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
-@PreAuthorize("denyAll()")
 public class TestAuthController {
     
-    @GetMapping("/hello")
-    @PreAuthorize("permitAll()")
-    public String hello(){
-        return "Hello World";
+    @GetMapping("/")
+    public String helloGet(){
+        return "Hello World - GET";
     }
 
-    @GetMapping("/hello-secured")
-    @PreAuthorize("hasAuthority('READ')")
-    public String helloSecured(){
-        return "Hello World Secured";
+    @PostMapping("/")
+    public String helloPost(){
+        return "Hello World - POST";
     }
 
-    @GetMapping("/hello-secured2")
-    @PreAuthorize("hasAuthority('CREATE')")
-    public String helloSecured2(){
-        return "Hello World Secured2";
+    @PutMapping("/")
+    public String helloPut(){
+        return "Hello World - PUT";
     }
+
+    @DeleteMapping("/")
+    public String helloDelete(){
+        return "Hello World - DELETE";
+    }
+
+    @PatchMapping("/")
+    public String helloPatch(){
+        return "Hello World - REFACTOR";
+    }
+    
 }

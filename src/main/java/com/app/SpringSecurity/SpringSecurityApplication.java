@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.app.SpringSecurity.repositories.UserRepository;
+import com.app.SpringSecurity.repositories.UsuarioRepository;
 import com.app.SpringSecurity.repositories.entities.PermisoEntity;
 import com.app.SpringSecurity.repositories.entities.RolEntity;
 import com.app.SpringSecurity.repositories.entities.RolEnum;
@@ -22,22 +22,22 @@ public class SpringSecurityApplication {
 	}
 
 	@Bean
-	CommandLineRunner init(UserRepository userRepository) {
+	CommandLineRunner init(UsuarioRepository userRepository) {
 		return args -> {
 			PermisoEntity crearPermiso = PermisoEntity.builder()
-					.nombre("CREAR")
+					.nombre("CREATE")
 					.build();
 
 			PermisoEntity leerPermiso = PermisoEntity.builder()
-					.nombre("LEER")
+					.nombre("READ")
 					.build();
 
 			PermisoEntity actualizarPermiso = PermisoEntity.builder()
-					.nombre("ACTUALIZAR")
+					.nombre("UPDATE")
 					.build();
 
 			PermisoEntity eliminarPermiso = PermisoEntity.builder()
-					.nombre("ELIMINAR")
+					.nombre("DELETE")
 					.build();
 
 			PermisoEntity refactorPermiso = PermisoEntity.builder()
@@ -66,7 +66,7 @@ public class SpringSecurityApplication {
 
 			UsuarioEntity santiagoUser = UsuarioEntity.builder()
 					.nombreUsuario("Santiago")
-					.contraseña("1234")
+					.contraseña("$2a$10$qVg/euVlqdIP9jz2OG0/W.v5uuTO/I8glxDDDS7UGBpirsvPXKn.i")
 					.activo(true)
 					.cuentaNoExpirada(true)
 					.cuentaNoBloqueada(true)
@@ -76,7 +76,7 @@ public class SpringSecurityApplication {
 
 			UsuarioEntity danielUser = UsuarioEntity.builder()
 					.nombreUsuario("Daniel")
-					.contraseña("1234")
+					.contraseña("$2a$10$qVg/euVlqdIP9jz2OG0/W.v5uuTO/I8glxDDDS7UGBpirsvPXKn.i")
 					.activo(true)
 					.cuentaNoExpirada(true)
 					.cuentaNoBloqueada(true)
@@ -86,7 +86,7 @@ public class SpringSecurityApplication {
 
 			UsuarioEntity andreaUser = UsuarioEntity.builder()
 					.nombreUsuario("Andrea")
-					.contraseña("1234")
+					.contraseña("$2a$10$qVg/euVlqdIP9jz2OG0/W.v5uuTO/I8glxDDDS7UGBpirsvPXKn.i")
 					.activo(true)
 					.cuentaNoExpirada(true)
 					.cuentaNoBloqueada(true)
@@ -96,7 +96,7 @@ public class SpringSecurityApplication {
 
 			UsuarioEntity angyUser = UsuarioEntity.builder()
 					.nombreUsuario("Angy")
-					.contraseña("1234")
+					.contraseña("$2a$10$qVg/euVlqdIP9jz2OG0/W.v5uuTO/I8glxDDDS7UGBpirsvPXKn.i")
 					.activo(true)
 					.cuentaNoExpirada(true)
 					.cuentaNoBloqueada(true)
